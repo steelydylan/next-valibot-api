@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {};
 
-module.exports = nextConfig
+const withTypedRouter = require("./plugins/lib")({});
+
+module.exports = withTypedRouter(nextConfig);

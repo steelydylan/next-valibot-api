@@ -6,22 +6,64 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build:plugin": "tsc -p ./plugins/tsconfig.json",
+    "build:lib": "tsc -p ./tsconfig.build.json"
+  },
+  "types": "lib/index.d.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "require": "./lib/index.js",
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./swr": {
+      "import": "./lib/swr.js",
+      "require": "./lib/swr.js",
+      "types": "./lib/swr.d.ts",
+      "default": "./lib/swr.js"
+    },
+    "./react-query": {
+      "import": "./lib/react-query.js",
+      "require": "./lib/react-query.js",
+      "types": "./lib/react-query.d.ts",
+      "default": "./lib/react-query.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "swr": [
+        "./lib/swr.d.ts"
+      ],
+      "react-query": [
+        "./lib/react-query.d.ts"
+      ]
+    }
   },
   "dependencies": {
+    "@types/qs": "^6.9.10",
+    "chokidar": "^3.5.3",
+    "fs-extra": "^11.1.1",
+    "next": "14.0.2",
+    "qs": "^6.11.2",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.0.2"
+    "react-query": "^3.39.3",
+    "swr": "^2.2.4",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@types/fs-extra": "^11.0.4",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.2",
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
-    "eslint": "^8",
-    "eslint-config-next": "14.0.2"
+    "typescript": "^5"
   }
 }
