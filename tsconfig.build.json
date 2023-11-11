@@ -8,8 +8,11 @@
     "esModuleInterop": true,
     "rootDir": "src",
     "outDir": "./lib",
-    "declaration": true
+    "declaration": true,
+    "paths": {
+      "@/*": ["./*"]
+    }
   },
   "include": ["./src/**/*"],
-  "exclude": ["plugins/**/*", "app/**/*", "node_modules/**/*", "lib/**/*"]
+  "exclude": ["node_modules", "app", "lib", "plugins"]
 }
