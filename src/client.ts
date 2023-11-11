@@ -4,7 +4,7 @@ import {
   GetQuery,
   PostQuery,
   PutQuery,
-} from ".next-valid-api";
+} from ".next-valibot-api";
 import qs from "qs";
 
 const defaultHeaders = {

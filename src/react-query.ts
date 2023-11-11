@@ -1,6 +1,6 @@
 import { useQuery } from "react-query";
 import { get } from "./client";
-import { GetQuery } from ".next-valid-api";
+import { GetQuery } from ".next-valibot-api";
 
 type GetOptions<T extends keyof GetQuery> = {
   query?: GetQuery[T]["query"];

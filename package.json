@@ -1,5 +1,5 @@
 {
-  "name": "next-valid-api",
+  "name": "next-valibot-api",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "build:plugin": "tsc -p ./plugins/tsconfig.json",
+    "build:dts": "node ./plugins/lib/build.js",
     "build:lib": "tsc -p tsconfig.build.json"
   },
   "types": "lib/index.d.ts",

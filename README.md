@@ -1,4 +1,4 @@
-# next-valid-api
+# next-valibot-api
 
 A library for simple API routing in Next.js
 while leveraging valibot and Typescript to create typesafe routes and middlewares with built in validation.
@@ -23,10 +23,10 @@ But I couldn't find a library that met my needs, so I created this library.
 
 ```bash
 ## npm
-npm install next-valid-api
+npm install next-valibot-api
 
 ## yarn
-yarn add next-valid-api
+yarn add next-valibot-api
 ```
 
 ### Server-side
@@ -38,7 +38,7 @@ yarn add next-valid-api
 
 ```ts
 // pages/api/sample.ts
-import { ApiHandler, createRouter, validate } from "next-valid-api";
+import { ApiHandler, createRouter, validate } from "next-valibot-api";
 import { object, string, optional } from "valibot";
 
 /* Schema definition using valibot */
@@ -117,7 +117,7 @@ router.get(validate(getValidation), (req, res) => {
 
 ```ts
 // client.ts
-import { client } from "next-valid-api";
+import { client } from "next-valibot-api";
 
 client.get("/api/[id]", {
   query: {
@@ -158,10 +158,10 @@ router.onError((err, req, res) => {
 
 The default pages directory is `app`, so if you want to change it, you can use the `--appDir` option.
 
-| Option            | Description                             | Default value                |
-| ----------------- | --------------------------------------- | ---------------------------- |
-| --appDir          | app directory path                      | app                          |
-| --baseDir         | Project directory                       | .                            |
-| --distDir         | Type definition file output destination | node_modules/.next-valid-api |
-| --moduleNameSpace | Type definition file module name        | .next-valid-api              |
-| --watch           | Watch mode                              | false                        |
+| Option            | Description                             | Default value                  |
+| ----------------- | --------------------------------------- | ------------------------------ |
+| --appDir          | app directory path                      | app                            |
+| --baseDir         | Project directory                       | .                              |
+| --distDir         | Type definition file output destination | node_modules/.next-valibot-api |
+| --moduleNameSpace | Type definition file module name        | .next-valibot-api              |
+| --watch           | Watch mode                              | false                          |
