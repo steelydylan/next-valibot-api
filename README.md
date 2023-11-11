@@ -107,8 +107,8 @@ const getValidation = {
   }),
 };
 
-router.get(validate(getValidation), (req, res) => {
-  req.query.id;
+router.get(validate(getValidation), (ctx) => {
+  ctx.query.id;
   ctx.json({ message: "ok" });
 });
 ```
@@ -134,8 +134,8 @@ client.get("/api/[id]", {
 
 ```ts
 // pages/api/sample.ts
-router.post(validate(postValidation), (req, res) => {
-  const session = getSession(req);
+router.post(validate(postValidation), (ctx) => {
+  const session = getSession(ctx);
   if (!session) {
     throw createError(401, "Unauthorized");
   }
@@ -148,7 +148,7 @@ router.post(validate(postValidation), (req, res) => {
 ```ts
 // pages/api/sample.ts
 
-router.onError((err, req, res) => {
+router.onError((err) => {
   // custom error handling
   res.status(err.statusCode).json({ message: err.message });
 });
