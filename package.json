@@ -1,13 +1,13 @@
 {
   "name": "next-valibot-api",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "scripts": {
     "dev": "next dev",
     "start": "next start",
     "lint": "next lint",
     "build": "npm run build:plugin && npm run build:dts && npm run build:lib",
-    "build:plugin": "tsc -p ./plugins/tsconfig.json",
-    "build:dts": "node ./plugins/lib/build.js",
+    "build:plugin": "tsc -p ./plugin/tsconfig.json",
+    "build:dts": "node ./plugin/lib/build.js",
     "build:lib": "tsc -p tsconfig.build.json"
   },
   "types": "lib/index.d.ts",
@@ -31,11 +31,11 @@
       "types": "./lib/react-query.d.ts",
       "default": "./lib/react-query.js"
     },
-    "./plugins": {
-      "import": "./plugins/lib/index.js",
-      "require": "./plugins/lib/index.js",
-      "types": "./plugins/lib/index.d.ts",
-      "default": "./plugins/lib/index.js"
+    "./plugin": {
+      "import": "./plugin/lib/index.js",
+      "require": "./plugin/lib/index.js",
+      "types": "./plugin/lib/index.d.ts",
+      "default": "./plugin/lib/index.js"
     }
   },
   "typesVersions": {
@@ -46,8 +46,8 @@
       "react-query": [
         "./lib/react-query.d.ts"
       ],
-      "plugins": [
-        "./plugins/lib/index.d.ts"
+      "plugin": [
+        "./plugin/lib/index.d.ts"
       ]
     }
   },
