@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "build": "npm run build:plugin && npm run build:dts && npm run build:lib",
     "build:plugin": "tsc -p ./plugins/tsconfig.json",
     "build:dts": "node ./plugins/lib/build.js",
     "build:lib": "tsc -p tsconfig.build.json"
