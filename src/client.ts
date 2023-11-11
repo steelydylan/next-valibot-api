@@ -4,7 +4,7 @@ import {
   GetQuery,
   PostQuery,
   PutQuery,
-} from ".next-typed-router";
+} from ".next-valid-api";
 import qs from "qs";
 
 const defaultHeaders = {

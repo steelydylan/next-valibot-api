@@ -1,0 +1,9 @@
+node_modules/*
+src/*
+.next/*
+.vscode/*
+app/*
+public/*
+.eslintrc.json
+.next-env.d.ts
+next.config.js

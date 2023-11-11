@@ -1,6 +1,6 @@
 import { useQuery } from "react-query";
 import { get } from "./client";
-import { GetQuery } from ".next-typed-router";
+import { GetQuery } from ".next-valid-api";
 
 type GetOptions<T extends keyof GetQuery> = {
   query?: GetQuery[T]["query"];

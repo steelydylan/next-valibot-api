@@ -1,5 +1,5 @@
 import { get } from "./client";
-import { GetQuery } from ".next-typed-router";
+import { GetQuery } from ".next-valid-api";
 import useSWR from "swr";
 
 type GetOptions<T extends keyof GetQuery> = {
