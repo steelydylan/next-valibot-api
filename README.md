@@ -158,25 +158,27 @@ router.onError((err) => {
 
 You have to use the plugin to generate the type definition file.
 
+next.config.js
+
 ```js:next.config.js
+/** @type {import('next').NextConfig} */
+const nextConfig = {};
+
 const withValibotApi = require("next-valibot-api/plugin")(/* options */);
 
-module.exports = withValibotApi({
-  /* config options */
-});
+module.exports = withValibotApi(nextConfig);
 ```
 
 ### Config options
 
 The default pages directory is `app`, so if you want to change it, you can use the `--appDir` option.
 
-| Option            | Description                             | Default value                  |
-| ----------------- | --------------------------------------- | ------------------------------ |
-| --appDir          | app directory path                      | app                            |
-| --baseDir         | Project directory                       | .                              |
-| --distDir         | Type definition file output destination | node_modules/.next-valibot-api |
-| --moduleNameSpace | Type definition file module name        | .next-valibot-api              |
-| --watch           | Watch mode                              | false                          |
+| Option          | Description                             | Default value                  |
+| --------------- | --------------------------------------- | ------------------------------ |
+| appDir          | app directory path                      | app                            |
+| baseDir         | Project directory                       | .                              |
+| distDir         | Type definition file output destination | node_modules/.next-valibot-api |
+| moduleNameSpace | Type definition file module name        | .next-valibot-api              |
 
 ```
 
