@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { BaseSchema, Input } from "valibot";
 import { ApiError, createError } from "./error";
 import { RequestHandler } from "./type";
 
@@ -11,17 +11,17 @@ type HandlerObject = {
 type ErrorHandler = (err: ApiError, req: Request) => void;
 
 type ApiZodSchema = {
-  body?: z.ZodSchema<any>;
-  query?: z.ZodSchema<any>;
-  res?: z.ZodSchema<any>;
-  params?: z.ZodSchema<any>;
+  body?: BaseSchema;
+  query?: BaseSchema;
+  res?: BaseSchema;
+  params?: BaseSchema;
 };
 
 export type ApiHandler<T extends ApiZodSchema> = {
-  body: T["body"] extends z.ZodSchema<any> ? z.infer<T["body"]> : never;
-  query: T["query"] extends z.ZodSchema<any> ? z.infer<T["query"]> : never;
-  params: T["params"] extends z.ZodSchema<any> ? z.infer<T["params"]> : never;
-  res: T["res"] extends z.ZodSchema<any> ? z.infer<T["res"]> : never;
+  body: T["body"] extends BaseSchema ? Input<T["body"]> : never;
+  query: T["query"] extends BaseSchema ? Input<T["query"]> : never;
+  params: T["params"] extends BaseSchema ? Input<T["params"]> : never;
+  res: T["res"] extends BaseSchema ? Input<T["res"]> : never;
 };
 
 class Router {

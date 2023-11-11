@@ -1,27 +1,27 @@
 import { ApiHandler, createRouter } from "@/src/router";
 import { validate } from "@/src/validation";
-import { z } from "zod";
+import { object, string } from "valibot";
 
 const getValidation = {
-  params: z.object({
-    id: z.string(),
+  params: object({
+    id: string(),
   }),
-  res: z.object({
-    id: z.string(),
+  res: object({
+    id: string(),
   }),
 };
 
 const postValidation = {
-  params: z.object({
-    id: z.string(),
+  params: object({
+    id: string(),
   }),
-  body: z.object({
-    id: z.string(),
-    html: z.string(),
+  body: object({
+    id: string(),
+    html: string(),
   }),
-  res: z.object({
-    id: z.string(),
-    html: z.string(),
+  res: object({
+    id: string(),
+    html: string(),
   }),
 };
 

@@ -1,17 +1,17 @@
 import { ApiHandler, createRouter } from "@/src/router";
 import { validate } from "@/src/validation";
-import { z } from "zod";
+import { object, string, nullable } from "valibot";
 
 const getValidation = {
-  query: z.object({
-    userId: z.string(),
-    lessonId: z.string(),
+  query: object({
+    userId: string(),
+    lessonId: string(),
   }),
-  res: z.object({
-    id: z.string(),
-    html: z.string(),
-    css: z.string(),
-    js: z.string().nullable(),
+  res: object({
+    id: string(),
+    html: string(),
+    css: string(),
+    js: nullable(string()),
   }),
 };
 
