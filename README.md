@@ -38,7 +38,8 @@ yarn add next-valibot-api
 
 ```ts
 // pages/api/sample.ts
-import { ApiHandler, createRouter, validate } from "next-valibot-api";
+import { ApiHandler, createRouter } from "next-valibot-api";
+import { validate } from "next-valibot-api/validation";
 import { object, string, optional } from "valibot";
 
 /* Schema definition using valibot */
