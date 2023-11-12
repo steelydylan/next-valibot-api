@@ -5,7 +5,6 @@ import {
   PostQuery,
   PutQuery,
 } from ".next-valibot-api";
-import qs from "qs";
 
 const defaultHeaders = {
   "Content-Type": "application/json",
@@ -42,7 +41,13 @@ function buildQuery(url: string, query?: Record<string, string>) {
   if (Object.keys(query).length === 0) {
     return url;
   }
-  const queryString = qs.stringify(query);
+  const searchParams = new URLSearchParams();
+  Object.entries(query).forEach(([key, value]) => {
+    if (value) {
+      searchParams.set(key, value);
+    }
+  });
+  const queryString = searchParams.toString();
   return `${url}?${queryString}`;
 }
 

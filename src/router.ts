@@ -1,4 +1,4 @@
-import { BaseSchema, Input } from "valibot";
+import type { BaseSchema, Input } from "valibot";
 import { ApiError, createError } from "./error";
 import { RequestHandler } from "./type";
 
@@ -10,14 +10,14 @@ type HandlerObject = {
 
 type ErrorHandler = (err: ApiError, req: Request) => void;
 
-type ApiZodSchema = {
+type ApiSchema = {
   body?: BaseSchema;
   query?: BaseSchema;
   res?: BaseSchema;
   params?: BaseSchema;
 };
 
-export type ApiHandler<T extends ApiZodSchema> = {
+export type ApiHandler<T extends ApiSchema> = {
   body: T["body"] extends BaseSchema ? Input<T["body"]> : never;
   query: T["query"] extends BaseSchema ? Input<T["query"]> : never;
   params: T["params"] extends BaseSchema ? Input<T["params"]> : never;
