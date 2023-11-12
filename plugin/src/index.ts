@@ -1,5 +1,4 @@
 import { NextConfig } from "next";
-import chokidar from "chokidar";
 import config from "./config";
 import { main } from "./main";
 
@@ -12,22 +11,14 @@ module.exports =
   (nextConfig: NextConfig = {}): NextConfig => {
     const options = Object.assign({}, defaultPluginOptions, pluginOptions);
 
+    main(options);
+
     return {
       ...nextConfig,
       webpack(config, webpackOptions) {
         if (webpackOptions.dev) {
           if (webpackOptions.isServer) {
-            // クライアントサイドのビルド時に実行
-            const watcher = chokidar.watch(options.appDir, {
-              ignored: /(^|[\/\\])\../,
-              persistent: true,
-            });
-            watcher.on("change", async (path: string) => {
-              console.log(`File ${path} has been changed`);
-              watcher.unwatch(options.appDir);
-              await main(options);
-              watcher.add(options.appDir);
-            });
+            // サーバーサイドで実行
           }
         } else {
           // プロダクションビルド時に実行
