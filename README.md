@@ -3,6 +3,8 @@
 A library for simple API routing in Next.js
 while leveraging valibot and Typescript to create typesafe routes and middlewares with built in validation.
 
+![screen](./screenshot.webp)
+
 ## Motivation
 
 I wanted to create type-safe APIs in Next.js using valibot and also wanted to generate type definition files for client-side use so that I could use intuitive API calls.
