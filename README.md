@@ -186,7 +186,3 @@ The default pages directory is `app`, so if you want to change it, you can use t
 | baseDir         | Project directory                       | .                              |
 | distDir         | Type definition file output destination | node_modules/.next-valibot-api |
 | moduleNameSpace | Type definition file module name        | .next-valibot-api              |
-
-```
-
-```
