@@ -5,6 +5,10 @@ while leveraging valibot and Typescript to create typesafe routes and middleware
 
 ![screen](./screenshot.webp)
 
+## Demo
+
+[Stackblitz](https://stackblitz.com/edit/stackblitz-starters-fimjif?file=app%2Fpage.tsx&file=app%2Fapi%2Ftest%2F[id]%2Froute.ts&hideNavigation=1&view=editor)
+
 ## Motivation
 
 I wanted to create type-safe APIs in Next.js using valibot and also wanted to generate type definition files for client-side use so that I could use intuitive API calls.
