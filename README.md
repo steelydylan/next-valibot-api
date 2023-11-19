@@ -12,7 +12,7 @@ while leveraging valibot and Typescript to create typesafe routes and middleware
 ## Motivation
 
 I wanted to create type-safe APIs in Next.js using valibot and also wanted to generate type definition files for client-side use so that I could use intuitive API calls.
-But I couldn't find a library that met my needs, so I created this library.
+This library is easier to use than tRPC, which is a great library, but it is difficult to use for beginners.
 
 ## Features
 
